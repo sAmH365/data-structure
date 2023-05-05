@@ -8,7 +8,7 @@ public class CircularLinkedList<E> implements LinkedListInterface<E> {
 
     public CircularLinkedList() {
         this.numItems = 0;
-        this.tail = new Node(-1);
+        this.tail = new Node(null);
         this.tail.next = tail;
     }
 
