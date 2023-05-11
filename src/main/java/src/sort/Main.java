@@ -14,6 +14,7 @@ public class Main {
         }
         System.out.println();
 
+
         int arr2[] = {32, 13, 22, 51, 2, 3, 4, 33, 88, 211};
         Sorting s2 = new Sorting(arr2);
         s2.bubbleSort();
@@ -24,6 +25,7 @@ public class Main {
         }
         System.out.println();
 
+
         int arr3[] = {32, 13, 22, 51, 2, 3, 4, 33, 88, 211};
         Sorting s3 = new Sorting(arr3);
         s3.insertionSort();
@@ -31,6 +33,17 @@ public class Main {
         System.out.print("삽입정렬 :: ");
         for (int i=0; i<arr3.length; i++) {
             System.out.printf("%d ", arr3[i]);
+        }
+        System.out.println();
+
+
+        int arr4[] = {32, 13, 22, 51, 2, 3, 4, 33, 88, 211};
+        Sorting s4 = new Sorting(arr4);
+        s4.mergeSort();
+
+        System.out.print("병합정렬 :: ");
+        for (int i=0; i<arr4.length; i++) {
+            System.out.printf("%d ", arr4[i]);
         }
     }
 }
