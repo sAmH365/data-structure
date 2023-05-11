@@ -46,4 +46,19 @@ public class Sorting {
             }
         }
     }
+
+    // 삽입정렬
+    public void insertionSort() {
+        for (int i=0; i < A.length - 1; i++) {
+            int loc = i - 1;
+            int newItem = A[i];
+
+            while (loc >=0 && newItem < A[loc]) {
+                A[loc + 1] = A[loc];
+                loc--;
+            }
+
+            A[loc+1] = newItem;
+        }
+    }
 }
