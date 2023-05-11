@@ -38,7 +38,7 @@ public class ArrayStack<E> implements StackInterface<E> {
     @Override
     public E top() throws Exception {
         if (isEmpty()) {
-            throw new Exception("pop fail in ArrayStack");
+            throw new Exception("top fail in ArrayStack");
         } else {
             return this.stack[topIndex];
         }

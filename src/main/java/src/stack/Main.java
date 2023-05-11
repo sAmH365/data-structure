@@ -15,5 +15,16 @@ public class Main {
         System.out.println("isFull() :: " + s.isFull());
 
         System.out.println(s);
+        System.out.println("=================");
+
+        LinkedStack<String> linkedStack = new LinkedStack<>();
+        linkedStack.push("test 1");
+        linkedStack.push("test 2");
+        linkedStack.push("test 3");
+        linkedStack.pop();
+
+        while (!linkedStack.isEmpty()) {
+            System.out.println(linkedStack.pop());
+        }
     }
 }
