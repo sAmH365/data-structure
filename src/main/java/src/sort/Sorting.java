@@ -64,37 +64,42 @@ public class Sorting {
 
     // 병합 정렬
     public void mergeSort() {
-        int [] B = new int[A.length];
-        mSort(0, A.length-1, B);
+        int[] B = new int[A.length];
+        mSort(0, A.length - 1, B);
     }
 
-    private void mSort(int p, int r, int[] b) {
-        if (p < r) {
-            int q = (p + r) / 2;
-            mSort(p, q, b);
-            mSort(q+1, r, b);
-            merge(p, q, r, b);
+    private void mSort(int p, int n, int[] B) {
+        if (p < n) {
+            int middle = (p + n) / 2;
+            mSort(p, middle, B);
+            mSort(middle + 1, n, B);
+            merge(p, middle, n, B);
         }
     }
 
-    private void merge(int p, int q, int r, int[] b) {
+    private void merge(int p, int middle, int n, int[] B) {
         int i = p;
-        int j = q + 1;
-        int t = 0;
+        int j = middle + 1;
+        int t = p;
 
-        while( i <= q && j <= r) {
+        while (i <= middle && j <= n) {
             if (A[i] <= A[j]) {
-                b[t++] = A[i++];
+                B[t++] = A[i++];
             } else {
-                b[t++] = A[j++];
+                B[t++] = A[j++];
             }
         }
-        while(i <= q) // 왼쪽 부분 배열이 남은 경우
-            b[t++] = A[i++];
-        while (j <= r) // 오른쪽 부분 배열이 남은 경우
-            b[t++] = A[j++];
-        i = p; t = 0;
-        while(i <= r) // 결과를 A[p...r]에 저장
-            A[i++] = b[t++];
+
+        while (i <= middle) { // 왼쪽 부분 남은 경우
+            B[t++] = A[i++];
+        }
+        while (j <= n) {// 오른쪽 부분 남은 경우
+            B[t++] = A[j++];
+        }
+
+//        결과를 A[p...n]에 저장
+        for (i = p; i<=n; i++) {
+            A[i] = B[i];
+        }
     }
 }
